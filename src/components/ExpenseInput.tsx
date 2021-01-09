@@ -4,7 +4,6 @@ import { MyExpense } from "../types/ExpenseType";
 
 const ExpenseInput = () => {
   const addNewExpense = useStore((state) => state.addNewExpense);
-  const addTotal = useStore((state) => state.addTotal);
   const [title, setTitle] = useState("");
   const [money, setMoney] = useState("");
 
@@ -16,7 +15,6 @@ const ExpenseInput = () => {
       time: new Date().toDateString(),
     };
     addNewExpense(newExpense);
-    addTotal(parseInt(newExpense.money));
     setTitle("");
     setMoney("");
   };

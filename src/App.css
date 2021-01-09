@@ -69,6 +69,7 @@ li {
   padding: 0 10px;
   border-radius: 2px;
   margin: 10px 0;
+  position: relative;
 }
 
 .expense .title {
@@ -77,11 +78,36 @@ li {
 
 .expense .money {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .expense .money p {
   font-size: 2rem;
   font-weight: bold;
+  margin-top: 10px;
+}
+
+.expense:hover .action {
+  visibility: visible;
+  opacity: 1;
+}
+
+.expense .action {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.05s ease;
+}
+
+.expense .action .icon {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.expense .action .icon:hover {
+  color: #f1e9ff;
 }
