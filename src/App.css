@@ -1,38 +1,87 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 8px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.apptitle {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.apptitle > p {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.expense-input {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.expense-input input {
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #dadada;
+}
+.expense-input input.exp-title {
+  flex-grow: 2;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.expense-input input.exp-money {
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.expense-input button {
+  margin-bottom: 5px;
+}
+
+.expense-list .expense:nth-child(odd) {
+  background: #673ab7;
+  color: #f1e9ff;
+}
+
+.expense-list .expense:nth-child(even) {
+  background: #009688;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.expense {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  border-radius: 2px;
+  margin: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.expense .title {
+  flex-grow: 2;
+}
+
+.expense .money {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expense .money p {
+  font-size: 2rem;
+  font-weight: bold;
 }

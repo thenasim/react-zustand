@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useStore } from "./store/useStore";
+import Expense from "./components/Expense";
+import ExpenseInput from "./components/ExpenseInput";
 
 function App() {
+  const expenses = useStore((state) => state.expenses);
+  const total = useStore((state) => state.total);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="apptitle">
+        <h1>Expense Calculator</h1>
+        <p>Total: {total} Tk</p>
+      </div>
+      <ExpenseInput />
+      <div className="expense-list">
+        <ul>
+          {expenses.map((exp) => (
+            <Expense key={exp.id} {...exp} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
